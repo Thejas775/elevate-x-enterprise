@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import { createClient } from '@/lib/supabase/client'
-import { ChevronDown, ChevronUp, Package } from 'lucide-react'
+import { ChevronDown, ChevronUp, Package, MessageCircle } from 'lucide-react'
 import type { Order, OrderStatus } from '@/lib/types'
 
 const STATUS_OPTIONS: OrderStatus[] = ['pending', 'confirmed', 'shipped', 'delivered', 'cancelled']
@@ -82,6 +82,17 @@ export default function AdminOrdersPage() {
                       <p className="text-gray-800 font-medium">{(order as any).profiles?.full_name || 'Unknown'}</p>
                       {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                       <p className="text-xs text-gray-400">{(order as any).profiles?.email}</p>
+                      {order.whatsapp_number && (
+                        <a
+                          href={`https://wa.me/${order.whatsapp_number.replace(/\D/g, '')}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 mt-1 text-xs text-green-600 hover:text-green-700 font-medium"
+                        >
+                          <MessageCircle className="w-3 h-3" />
+                          {order.whatsapp_number}
+                        </a>
+                      )}
                     </div>
                     <div className="font-bold text-gray-900">${order.total.toFixed(2)}</div>
                     <div>

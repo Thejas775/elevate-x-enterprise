@@ -41,6 +41,7 @@ export type Order = {
   status: OrderStatus
   total: number
   shipping_address: string | null
+  whatsapp_number: string | null
   created_at: string
   order_items?: OrderItem[]
   profile?: Profile

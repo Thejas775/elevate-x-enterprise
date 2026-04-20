@@ -55,6 +55,7 @@ export default function CheckoutPage() {
         status: 'pending',
         total: grandTotal,
         shipping_address: shippingAddress,
+        whatsapp_number: form.phone,
       })
       .select()
       .single()
@@ -147,9 +148,11 @@ export default function CheckoutPage() {
                   className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Phone</label>
-                <input name="phone" value={form.phone} onChange={handleChange}
+                <label className="block text-sm font-medium text-gray-700 mb-1">WhatsApp Number *</label>
+                <input required type="tel" name="phone" value={form.phone} onChange={handleChange}
+                  placeholder="+91 98765 43210"
                   className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                <p className="text-xs text-gray-400 mt-1">We'll contact you on WhatsApp for order updates.</p>
               </div>
               <div className="sm:col-span-2">
                 <label className="block text-sm font-medium text-gray-700 mb-1">Address *</label>
