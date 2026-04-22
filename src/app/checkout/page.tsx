@@ -77,7 +77,7 @@ export default function CheckoutPage() {
     const { error: itemsError } = await supabase.from('order_items').insert(orderItems)
 
     if (itemsError) {
-      setError('Failed to save order items. Please contact support.')
+      setError('Failed to save order items. Please contact support at elevatexenterprise@gmail.com.')
       setSubmitting(false)
       return
     }
