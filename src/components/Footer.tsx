@@ -48,13 +48,13 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-semibold mb-4">Contact</h3>
             <ul className="space-y-3 text-sm">
-              <li className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-blue-400 flex-shrink-0" />
-                <span>123 Tech Street, Silicon Valley, CA 94025</span>
+              <li className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />
+                <span>J/79 Anandvan Society, Near Saket Society, Susan Tarsali Road, Vadodara</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-blue-400 flex-shrink-0" />
-                <span>+1 (555) 123-4567</span>
+                <a href="tel:+919773179834" className="hover:text-blue-400 transition-colors">+91 97731 79834</a>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-blue-400 flex-shrink-0" />
