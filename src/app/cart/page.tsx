@@ -59,7 +59,7 @@ export default function CartPage() {
                 {item.product?.brand && (
                   <p className="text-xs text-gray-500 mt-0.5">{item.product.brand}</p>
                 )}
-                <p className="text-blue-600 font-bold mt-1">${item.product?.price.toFixed(2)}</p>
+                <p className="text-blue-600 font-bold mt-1">₹{item.product?.price.toFixed(2)}</p>
               </div>
 
               {/* Controls */}
@@ -80,7 +80,7 @@ export default function CartPage() {
                   </button>
                 </div>
                 <p className="text-sm font-bold text-gray-800">
-                  ${((item.product?.price || 0) * item.quantity).toFixed(2)}
+                  ₹{((item.product?.price || 0) * item.quantity).toFixed(2)}
                 </p>
               </div>
             </div>
@@ -94,22 +94,22 @@ export default function CartPage() {
             <div className="space-y-3 text-sm mb-4">
               <div className="flex justify-between text-gray-600">
                 <span>Subtotal</span>
-                <span>${total.toFixed(2)}</span>
+                <span>₹{total.toFixed(2)}</span>
               </div>
               <div className="flex justify-between text-gray-600">
                 <span>Shipping</span>
                 <span className={total >= 99 ? 'text-green-600' : ''}>
-                  {total >= 99 ? 'FREE' : '$9.99'}
+                  {total >= 99 ? 'FREE' : '₹9.99'}
                 </span>
               </div>
               {total < 99 && (
                 <p className="text-xs text-blue-600 bg-blue-50 rounded px-3 py-2">
-                  Add ${(99 - total).toFixed(2)} more for free shipping!
+                  Add ₹{(99 - total).toFixed(2)} more for free shipping!
                 </p>
               )}
               <div className="border-t border-gray-200 pt-3 flex justify-between font-bold text-base text-gray-900">
                 <span>Total</span>
-                <span>${(total + (total >= 99 ? 0 : 9.99)).toFixed(2)}</span>
+                <span>₹{(total + (total >= 99 ? 0 : 9.99)).toFixed(2)}</span>
               </div>
             </div>
             <Link

@@ -74,9 +74,9 @@ export default function ProductCard({ product }: Props) {
 
           {/* Price */}
           <div className="flex items-baseline gap-2 mb-3">
-            <span className="text-lg font-bold text-gray-900">${product.price.toFixed(2)}</span>
+            <span className="text-lg font-bold text-gray-900">₹{product.price.toFixed(2)}</span>
             {product.original_price && (
-              <span className="text-sm text-gray-400 line-through">${product.original_price.toFixed(2)}</span>
+              <span className="text-sm text-gray-400 line-through">₹{product.original_price.toFixed(2)}</span>
             )}
           </div>
 

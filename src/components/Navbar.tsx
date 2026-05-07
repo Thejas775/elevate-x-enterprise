@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import { useCart } from '@/context/CartContext'
 import { ShoppingCart, User, Menu, X, Search } from 'lucide-react'
@@ -17,6 +17,7 @@ export default function Navbar() {
   const [categories, setCategories] = useState<{ id: string; name: string; slug: string }[]>([])
   const { count } = useCart()
   const pathname = usePathname()
+  const router = useRouter()
   const supabase = createClient()
 
   useEffect(() => {
@@ -60,7 +61,8 @@ export default function Navbar() {
 
   const handleSignOut = async () => {
     await supabase.auth.signOut()
-    window.location.href = '/'
+    router.push('/')
+    router.refresh()
   }
 
   const navLinks = [

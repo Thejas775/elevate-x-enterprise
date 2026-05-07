@@ -74,7 +74,7 @@ export default function OrdersPage() {
                 </span>
               </div>
               <div className="flex items-center gap-4">
-                <span className="font-bold text-gray-900">${order.total.toFixed(2)}</span>
+                <span className="font-bold text-gray-900">₹{order.total.toFixed(2)}</span>
                 {expanded === order.id ? <ChevronUp className="w-4 h-4 text-gray-400" /> : <ChevronDown className="w-4 h-4 text-gray-400" />}
               </div>
             </button>
@@ -95,9 +95,9 @@ export default function OrdersPage() {
                       <Link href={`/products/${item.product?.slug}`} className="text-sm font-medium text-gray-800 hover:text-blue-600 line-clamp-1">
                         {item.product?.name}
                       </Link>
-                      <p className="text-xs text-gray-500">×{item.quantity} @ ${item.price.toFixed(2)}</p>
+                      <p className="text-xs text-gray-500">×{item.quantity} @ ₹{item.price.toFixed(2)}</p>
                     </div>
-                    <p className="text-sm font-semibold text-gray-800">${(item.price * item.quantity).toFixed(2)}</p>
+                    <p className="text-sm font-semibold text-gray-800">₹{(item.price * item.quantity).toFixed(2)}</p>
                   </div>
                 ))}
                 {order.shipping_address && (

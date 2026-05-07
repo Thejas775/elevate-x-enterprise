@@ -94,7 +94,7 @@ export default function AdminOrdersPage() {
                         </a>
                       )}
                     </div>
-                    <div className="font-bold text-gray-900">${order.total.toFixed(2)}</div>
+                    <div className="font-bold text-gray-900">₹{order.total.toFixed(2)}</div>
                     <div>
                       <select
                         value={order.status}
@@ -125,7 +125,7 @@ export default function AdminOrdersPage() {
                               </div>
                               {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                               <span className="text-gray-700">{(item as any).product?.name} ×{item.quantity}</span>
-                              <span className="text-gray-500 ml-auto">${(item.price * item.quantity).toFixed(2)}</span>
+                              <span className="text-gray-500 ml-auto">₹{(item.price * item.quantity).toFixed(2)}</span>
                             </div>
                           ))}
                         </div>

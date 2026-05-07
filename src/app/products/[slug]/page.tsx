@@ -157,9 +157,9 @@ export default function ProductDetailPage() {
 
           {/* Price */}
           <div className="flex items-baseline gap-3 mb-4">
-            <span className="text-3xl font-extrabold text-gray-900">${product.price.toFixed(2)}</span>
+            <span className="text-3xl font-extrabold text-gray-900">₹{product.price.toFixed(2)}</span>
             {product.original_price && (
-              <span className="text-xl text-gray-400 line-through">${product.original_price.toFixed(2)}</span>
+              <span className="text-xl text-gray-400 line-through">₹{product.original_price.toFixed(2)}</span>
             )}
             {discount > 0 && (
               <span className="bg-red-100 text-red-600 text-sm font-bold px-2 py-1 rounded-full">
@@ -249,7 +249,7 @@ export default function ProductDetailPage() {
                   )}
                 </div>
                 <p className="text-sm font-medium text-gray-800 line-clamp-2 group-hover:text-blue-600">{p.name}</p>
-                <p className="text-base font-bold text-gray-900 mt-1">${p.price.toFixed(2)}</p>
+                <p className="text-base font-bold text-gray-900 mt-1">₹{p.price.toFixed(2)}</p>
               </Link>
             ))}
           </div>

@@ -199,7 +199,7 @@ export default function CheckoutPage() {
             disabled={submitting}
             className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-semibold text-base transition-colors disabled:opacity-60"
           >
-            {submitting ? 'Placing Order...' : `Place Order — $${grandTotal.toFixed(2)}`}
+            {submitting ? 'Placing Order...' : `Place Order — ₹${grandTotal.toFixed(2)}`}
           </button>
         </form>
 
@@ -221,18 +221,18 @@ export default function CheckoutPage() {
                     <p className="truncate text-gray-800">{item.product?.name}</p>
                     <p className="text-gray-500">×{item.quantity}</p>
                   </div>
-                  <p className="font-semibold text-gray-800">${((item.product?.price || 0) * item.quantity).toFixed(2)}</p>
+                  <p className="font-semibold text-gray-800">₹{((item.product?.price || 0) * item.quantity).toFixed(2)}</p>
                 </div>
               ))}
             </div>
             <div className="border-t border-gray-200 pt-3 space-y-2 text-sm">
-              <div className="flex justify-between text-gray-600"><span>Subtotal</span><span>${total.toFixed(2)}</span></div>
+              <div className="flex justify-between text-gray-600"><span>Subtotal</span><span>₹{total.toFixed(2)}</span></div>
               <div className="flex justify-between text-gray-600">
                 <span>Shipping</span>
-                <span className={shipping === 0 ? 'text-green-600' : ''}>{shipping === 0 ? 'FREE' : `$${shipping.toFixed(2)}`}</span>
+                <span className={shipping === 0 ? 'text-green-600' : ''}>{shipping === 0 ? 'FREE' : `₹${shipping.toFixed(2)}`}</span>
               </div>
               <div className="flex justify-between font-bold text-base text-gray-900 pt-1 border-t border-gray-200">
-                <span>Total</span><span>${grandTotal.toFixed(2)}</span>
+                <span>Total</span><span>₹{grandTotal.toFixed(2)}</span>
               </div>
             </div>
           </div>

@@ -145,7 +145,7 @@ export default async function HomePage() {
       <section className="bg-blue-600 text-white py-16">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-extrabold mb-4">Ready to Upgrade Your Setup?</h2>
-          <p className="text-blue-100 text-lg mb-8">Join thousands of happy customers. Free shipping on orders over $99.</p>
+          <p className="text-blue-100 text-lg mb-8">Join thousands of happy customers. Free shipping on orders over ₹99.</p>
           <Link
             href="/products"
             className="bg-white text-blue-600 hover:bg-blue-50 font-bold px-10 py-4 rounded-xl text-lg transition-colors inline-flex items-center gap-2"

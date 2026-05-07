@@ -90,7 +90,7 @@ export default function AdminProductsPage() {
                     </div>
                   </td>
                   <td className="px-6 py-4 text-gray-600">{(product.category as {name:string} | null)?.name || '—'}</td>
-                  <td className="px-6 py-4 font-semibold text-gray-900">${product.price.toFixed(2)}</td>
+                  <td className="px-6 py-4 font-semibold text-gray-900">₹{product.price.toFixed(2)}</td>
                   <td className="px-6 py-4">
                     <span className={`text-xs font-semibold px-2 py-1 rounded-full ${product.stock > 0 ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
                       {product.stock}

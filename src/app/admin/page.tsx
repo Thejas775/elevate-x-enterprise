@@ -26,7 +26,7 @@ export default async function AdminDashboard() {
     { label: 'Total Products', value: productCount || 0, icon: Package, color: 'bg-blue-500' },
     { label: 'Total Orders', value: orderCount || 0, icon: ShoppingBag, color: 'bg-green-500' },
     { label: 'Customers', value: userCount || 0, icon: Users, color: 'bg-purple-500' },
-    { label: 'Revenue', value: `$${totalRevenue.toFixed(0)}`, icon: DollarSign, color: 'bg-yellow-500' },
+    { label: 'Revenue', value: `₹${totalRevenue.toFixed(0)}`, icon: DollarSign, color: 'bg-yellow-500' },
   ]
 
   return (
@@ -80,7 +80,7 @@ export default async function AdminDashboard() {
                       {order.status}
                     </span>
                   </td>
-                  <td className="px-6 py-4 font-semibold text-gray-900">${order.total.toFixed(2)}</td>
+                  <td className="px-6 py-4 font-semibold text-gray-900">₹{order.total.toFixed(2)}</td>
                   <td className="px-6 py-4 text-gray-500">{new Date(order.created_at).toLocaleDateString()}</td>
                 </tr>
               ))}
